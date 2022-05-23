@@ -8,6 +8,8 @@ import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
+import SignUp from "./Pages/Login/SignUp";
+import Login from "./Pages/Login/Login";
 
 function App() {
   return (
@@ -17,9 +19,12 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/about' element={<About />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/singup' element={<SignUp />} />
       </Routes>
       <Footer />
       <ToastContainer />
+      <script src='https://cdn.tailwindcss.com'></script>
     </div>
   );
 }
