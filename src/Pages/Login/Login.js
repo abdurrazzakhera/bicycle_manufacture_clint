@@ -1,18 +1,34 @@
 import React from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
+  let signInError;
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
-    // signInWithEmailAndPassword(data.email, data.password);
-    // // navigate("/appoinment");
+    signInWithEmailAndPassword(data.email, data.password);
     console.log(data);
   };
+  if (user) {
+    navigate("/");
+  }
+  if (error) {
+    signInError = <span>{error.message}</span>;
+  }
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className='flex h-screen justify-center items-center'>
       <div className='card w-full bg-base-100  p-6 m-auto border-t border-purple-600 rounded shadow-lg shadow-purple-800/50 lg:max-w-md'>
@@ -83,12 +99,14 @@ const Login = () => {
                 )}
               </label>
             </div>
+            {signInError}
             <input
               className='btn input-bordered btn-primary w-full max-w-xs '
               type='submit'
               value='Log In'
             />
           </form>
+
           <p class='mt-8 text-lg font-light text-center text-gray-700'>
             {" "}
             Don't have an account?{" "}
