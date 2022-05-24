@@ -2,10 +2,10 @@ import React from "react";
 
 const Myorder = ({ order, index }) => {
   const { customerName, productName, quantity } = order;
-  console.log(order);
+  //   console.log(order);
   return (
     <tr>
-      <th>{index}</th>
+      <th>{index + 1}</th>
       <td>{customerName}</td>
       <td>{productName}</td>
       <td>{quantity}</td>

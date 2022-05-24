@@ -26,7 +26,7 @@ const MYOrders = () => {
         <table class='table w-full'>
           <thead>
             <tr>
-              <th></th>
+              <th>#</th>
               <th>Name</th>
               <th>Product</th>
               <th>Quantity</th>
@@ -35,7 +35,7 @@ const MYOrders = () => {
           </thead>
           <tbody>
             {myOrders.map((order, index) => (
-              <Myorder inddex={index} key={order._id} order={order}></Myorder>
+              <Myorder index={index} key={order._id} order={order}></Myorder>
             ))}
           </tbody>
         </table>

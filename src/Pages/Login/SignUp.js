@@ -4,12 +4,13 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 
 const SignUp = () => {
-  const [createUserWithEmailAndPassword, Suser, Sloading, Serror] =
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, Pupdating, Perror] = useUpdateProfile(auth);
   const {
@@ -17,17 +18,23 @@ const SignUp = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const navigate = useNavigate();
+  const [token] = useToken(user);
 
+  if (token) {
+    navigate("/");
+  }
+
+  if (loading || Pupdating) {
+    return <Loading></Loading>;
+  }
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     console.log(data);
   };
-  if (Sloading || Pupdating) {
-    return <Loading></Loading>;
-  }
   return (
-    <div className='flex h-screen justify-center items-center'>
+    <div className='flex mb-10 justify-center items-center'>
       <div className='card w-full bg-base-100  p-6 m-auto border-t border-purple-600 rounded shadow-lg shadow-purple-800/50 lg:max-w-md'>
         <div className='card-body '>
           <h2 className=''>Sign Up</h2>
