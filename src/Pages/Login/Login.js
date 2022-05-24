@@ -1,8 +1,12 @@
 import React from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 
 const Login = () => {
@@ -13,7 +17,9 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   let signInError;
+  const [token] = useToken(user || gUser);
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
@@ -22,13 +28,13 @@ const Login = () => {
     signInWithEmailAndPassword(data.email, data.password);
     console.log(data);
   };
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
-  if (error) {
+  if (error || gError) {
     signInError = <span>{error.message}</span>;
   }
-  if (loading) {
+  if (loading || gLoading) {
     return <Loading></Loading>;
   }
   return (
@@ -120,12 +126,12 @@ const Login = () => {
             </Link>
           </p>
           <div className='divider'>OR</div>
-          {/* <button
-        onClick={() => signInWithGoogle()}
-        className='btn btn-outline'
-      >
-        Button
-      </button> */}
+          <button
+            onClick={() => signInWithGoogle()}
+            className='btn btn-outline '
+          >
+            Continue With Google
+          </button>
         </div>
       </div>
     </div>

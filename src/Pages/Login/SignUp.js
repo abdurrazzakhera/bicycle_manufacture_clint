@@ -1,6 +1,7 @@
 import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -12,21 +13,25 @@ import Loading from "../Shared/Loading";
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [updateProfile, Pupdating, Perror] = useUpdateProfile(auth);
+  const [updateProfile, Pupdating, perror] = useUpdateProfile(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const navigate = useNavigate();
-  const [token] = useToken(user);
+  const [token] = useToken(user || gUser);
 
   if (token) {
     navigate("/");
   }
 
-  if (loading || Pupdating) {
+  if (loading || gLoading || Pupdating) {
     return <Loading></Loading>;
+  }
+  if (error || gError) {
+    console.log(gError.message);
   }
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
@@ -143,12 +148,12 @@ const SignUp = () => {
             </Link>
           </p>
           <div className='divider'>OR</div>
-          {/* <button
-    onClick={() => signInWithGoogle()}
-    className='btn btn-outline'
-  >
-    Button
-  </button> */}
+          <button
+            onClick={() => signInWithGoogle()}
+            className='btn btn-outline '
+          >
+            Continue With Google
+          </button>
         </div>
       </div>
     </div>
