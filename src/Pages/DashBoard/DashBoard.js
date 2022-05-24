@@ -5,7 +5,7 @@ const DashBoard = () => {
   return (
     <div class='drawer drawer-mobile'>
       <input id='dashboard-sidebar' type='checkbox' class='drawer-toggle' />
-      <div class='drawer-content flex flex-col items-center justify-center'>
+      <div class='drawer-content flex flex-col mr-5'>
         {/* <!-- Page content here --> */}
         <Outlet />
         {/* <label
@@ -23,7 +23,7 @@ const DashBoard = () => {
             <Link to='/dashboard'>My Profile</Link>
           </li>
           <li>
-            <Link to='/dashboard'>Sidebar Item 2</Link>
+            <Link to='/dashboard/myorders'>My Orders</Link>
           </li>
         </ul>
       </div>
