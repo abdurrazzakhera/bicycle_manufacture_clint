@@ -10,6 +10,8 @@ import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
 import SignUp from "./Pages/Login/SignUp";
 import Login from "./Pages/Login/Login";
+import PrivateRoute from "./Pages/Shared/PrivateRoute";
+import Orders from "./Pages/Home/Orders";
 
 function App() {
   return (
@@ -21,6 +23,14 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SignUp />} />
+        <Route
+          path='/orders/:productId'
+          element={
+            <PrivateRoute>
+              <Orders />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <Footer />
       <ToastContainer />

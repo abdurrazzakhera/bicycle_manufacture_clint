@@ -9,11 +9,10 @@ const AllGoods = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setProducts(data);
       });
   }, []);
-  console.log(products);
   return (
     <div className='lg:container mx-auto'>
       <h1 className='text-3xl text-red-500'>

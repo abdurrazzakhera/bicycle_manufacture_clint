@@ -1,7 +1,13 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Goods = ({ product, index }) => {
+  const navigate = useNavigate();
   const { _id, img, name, dec, price, quantity, available } = product;
+  const handelPurchase = (id) => {
+    navigate(`/orders/${id}`);
+    console.log(id);
+  };
   return (
     <tr>
       <th>{index + 1}</th>
@@ -12,7 +18,12 @@ const Goods = ({ product, index }) => {
       <td>{quantity}</td>
       <td>{available}</td>
       <td>
-        <button class='btn btn-sm btn-primary'>Purchase</button>
+        <button
+          onClick={() => handelPurchase(_id)}
+          class='btn btn-sm btn-primary'
+        >
+          Purchase
+        </button>
       </td>
     </tr>
   );

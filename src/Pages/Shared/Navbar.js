@@ -13,10 +13,6 @@ const Navbar = () => {
   // if (loading) {
   //   return <Loading></Loading>;
   // }
-
-  if (user) {
-    navigate("/");
-  }
   const navItems = (
     <>
       <li>
