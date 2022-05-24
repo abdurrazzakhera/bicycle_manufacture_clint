@@ -12,6 +12,8 @@ import SignUp from "./Pages/Login/SignUp";
 import Login from "./Pages/Login/Login";
 import PrivateRoute from "./Pages/Shared/PrivateRoute";
 import Orders from "./Pages/Home/Orders";
+import DashBoard from "./Pages/DashBoard/DashBoard";
+import MyProfile from "./Pages/DashBoard/MyProfile";
 
 function App() {
   return (
@@ -31,6 +33,16 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path='/dashboard'
+          element={
+            <PrivateRoute>
+              <DashBoard />
+            </PrivateRoute>
+          }
+        >
+          <Route index element={<MyProfile></MyProfile>}></Route>
+        </Route>
       </Routes>
       <Footer />
       <ToastContainer />

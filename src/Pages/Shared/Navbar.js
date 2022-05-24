@@ -1,12 +1,11 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
   const logout = () => {
     signOut(auth);
   };
@@ -30,6 +29,7 @@ const Navbar = () => {
       <li>
         <Link to='/contactus'>Contact Us</Link>
       </li>
+      <li>{user && <Link to='/dashboard'>DashBoard</Link>}</li>
       <li>
         {user ? (
           <button onClick={logout}>Log Out</button>
@@ -70,8 +70,32 @@ const Navbar = () => {
           daisyUI
         </Link>
       </div>
-      <div className='navbar-end hidden lg:flex'>
+      <div className='navbar-end w-full hidden lg:flex'>
         <ul className='menu menu-horizontal p-0'>{navItems}</ul>
+      </div>
+      <div className='navbar-end'>
+        {user && (
+          <label
+            tabIndex='1'
+            for='dashboard-sidebar'
+            className='btn btn-ghost lg:hidden'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-5 w-5'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M4 6h16M4 12h8m-8 6h16'
+              />
+            </svg>
+          </label>
+        )}
       </div>
     </div>
   );
