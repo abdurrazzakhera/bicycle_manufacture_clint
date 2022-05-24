@@ -10,8 +10,14 @@ const MYOrders = () => {
     if (user) {
       fetch(`http://localhost:5000/orders?customerEmail=${user.email}`, {
         method: "GET",
+        headers: {
+          authorization: `Bearar ${localStorage.getItem("accessToken")}`,
+        },
       })
-        .then((res) => res.json())
+        .then((res) => {
+          console.log("res order", res);
+          return res.json();
+        })
         .then((data) => {
           console.log(data);
           setMyOrders(data);
