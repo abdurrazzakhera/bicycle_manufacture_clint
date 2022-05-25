@@ -1,23 +1,36 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const SingleProduct = ({ product, index }) => {
-  //   console.log(product);
+const SingleProduct = ({ product, index, refetch }) => {
   const { _id, img, name, price, available } = product;
-  const handelPriduct = (product) => {
-    console.log(product._id);
+  const handelPriduct = (id) => {
+    console.log(id);
+    const url = `http://localhost:5000/goods/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success("Product delete success");
+          refetch();
+        }
+      });
   };
 
   return (
     <tr>
-      <th>{index}</th>
+      <th>{index + 1}</th>
       <td>{img}</td>
       <td>{name}</td>
       <td>{price}</td>
       <td>{available}</td>
-      <td>{_id}</td>
       <td>
         <button
-          onClick={() => handelPriduct(product)}
+          onClick={() => handelPriduct(_id)}
           className='btn bg-red-500 btn-xs text-white font-bold'
         >
           Delete

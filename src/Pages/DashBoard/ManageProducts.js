@@ -4,7 +4,11 @@ import Loading from "../Shared/Loading";
 import SingleProduct from "./SingleProduct";
 
 const ManageProducts = () => {
-  const { data: products, isLoading } = useQuery("products", () =>
+  const {
+    data: products,
+    isLoading,
+    refetch,
+  } = useQuery("products", () =>
     fetch("http://localhost:5000/goods").then((res) => res.json())
   );
   if (isLoading) {
@@ -12,19 +16,18 @@ const ManageProducts = () => {
   }
   return (
     <div>
-      <h1 className='text-5xl text-blue-700'>
-        Total Product is : {products.length}
+      <h1 className='text-5xl text-blue-700 text-center mb-5'>
+        ManageMent Your Product
       </h1>
-      <div class='overflow-x-auto'>
-        <table class='table w-full'>
+      <div class='overflow-x-auto '>
+        <table class='table w-full  lg:w-11/12 mx-auto'>
           <thead>
             <tr>
-              <th></th>
+              <th>NO.</th>
               <th>Avater</th>
               <th>Product</th>
               <th>Price/Unit</th>
               <th>Avialable</th>
-              <th>id</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -34,6 +37,7 @@ const ManageProducts = () => {
                 key={product._id}
                 product={product}
                 index={index}
+                refetch={refetch}
               ></SingleProduct>
             ))}
           </tbody>
