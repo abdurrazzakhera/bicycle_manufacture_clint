@@ -8,44 +8,41 @@ const DashBoard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
   return (
-    <div class='drawer drawer-mobile'>
-      <input id='dashboard-sidebar' type='checkbox' class='drawer-toggle' />
-      <div class='drawer-content flex flex-col mr-5'>
+    <div className='drawer drawer-mobile'>
+      <input id='dashboard-sidebar' type='checkbox' className='drawer-toggle' />
+      <div className='drawer-content flex flex-col mr-5'>
         {/* <!-- Page content here --> */}
         <Outlet />
-        {/* <label
-          for='dashboard-sidebar'
-          class='btn btn-primary drawer-button lg:hidden'
-        >
-          Open drawer
-        </label> */}
       </div>
-      <div class='drawer-side'>
-        <label for='dashboard-sidebar' class='drawer-overlay'></label>
-        <ul class='menu p-4 overflow-y-auto w-48 bg-base-200 text-base-content'>
-          {/* <!-- Sidebar content here --> */}
-          {/* <li>
-            <Link to='/dashboard'>My Profile</Link>
-          </li>
-          <li>
-            <Link to='/dashboard/myorders'>My Orders</Link>
-          </li> */}
-          <li>
-            {admin ? (
-              <>
+      <div className='drawer-side'>
+        <label for='dashboard-sidebar' className='drawer-overlay'></label>
+        <ul className='menu p-4 overflow-y-auto w-48 bg-base-200 text-base-content'>
+          {admin ? (
+            <>
+              <li>
+                <Link to='/dashboard'>My Profile</Link>
+              </li>
+              <li>
+                {" "}
+                <Link to='/dashboard/allorders'>All Orders</Link>
+              </li>
+              <li>
                 <Link to='/dashboard/users'>All Users</Link>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link to='/dashboard'>My Profile</Link>
-                </li>
-                <li>
-                  <Link to='/dashboard/myorders'>My Orders</Link>
-                </li>
-              </>
-            )}
-          </li>
+              </li>
+              <li>
+                <Link to='/dashboard/manageproduct'>Manage Product</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to='/dashboard'>My Profile</Link>
+              </li>
+              <li>
+                <Link to='/dashboard/myorders'>My Orders</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
