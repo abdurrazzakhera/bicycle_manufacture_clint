@@ -19,6 +19,7 @@ import Users from "./Pages/DashBoard/Users";
 import RequirAdmin from "./Pages/Shared/RequirAdmin";
 import AllOrders from "./Pages/DashBoard/AllOrders";
 import ManageProducts from "./Pages/DashBoard/ManageProducts";
+import AddProduct from "./Pages/DashBoard/AddProduct";
 
 function App() {
   return (
@@ -69,6 +70,14 @@ function App() {
             element={
               <RequirAdmin>
                 <ManageProducts />
+              </RequirAdmin>
+            }
+          ></Route>
+          <Route
+            path='addproduct'
+            element={
+              <RequirAdmin>
+                <AddProduct />
               </RequirAdmin>
             }
           ></Route>

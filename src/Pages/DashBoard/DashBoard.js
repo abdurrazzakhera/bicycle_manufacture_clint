@@ -32,6 +32,9 @@ const DashBoard = () => {
               <li>
                 <Link to='/dashboard/manageproduct'>Manage Product</Link>
               </li>
+              <li>
+                <Link to='/dashboard/addproduct'>Add Product</Link>
+              </li>
             </>
           ) : (
             <>

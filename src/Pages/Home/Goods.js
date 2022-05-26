@@ -11,7 +11,11 @@ const Goods = ({ product, index }) => {
   return (
     <tr>
       <th>{index + 1}</th>
-      <td>{img}</td>
+      <td>
+        <div class='w-24 rounded-xl'>
+          <img src={img} alt='' />
+        </div>
+      </td>
       <td>{name}</td>
       <td>{dec}</td>
       <td>{price}</td>
