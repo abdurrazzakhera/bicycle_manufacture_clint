@@ -137,12 +137,12 @@ const SignUp = () => {
               value='Sign Up'
             />
           </form>
-          <p class='mt-8 text-lg font-light text-center text-gray-700'>
+          <p className='mt-8 text-lg font-light text-center text-gray-700'>
             {" "}
             Allready have Accoutn?{" "}
             <Link
               to='/login'
-              class='font-medium text-purple-600 hover:underline'
+              className='font-medium text-purple-600 hover:underline'
             >
               Log In
             </Link>

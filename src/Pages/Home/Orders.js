@@ -82,34 +82,34 @@ const Orders = () => {
             type='text'
             name='quantity'
             value={increase}
-            class='input input-bordered w-full max-w-xs'
+            className='input input-bordered w-full max-w-xs'
           />
           <input
             type='text'
             value={product.name}
-            class='input input-bordered w-full max-w-xs'
+            className='input input-bordered w-full max-w-xs'
           />
 
           <input
             type='text'
             value={displayName}
-            class='input input-bordered w-full max-w-xs'
+            className='input input-bordered w-full max-w-xs'
           />
           <input
             type='text'
             value={email}
-            class='input input-bordered w-full max-w-xs'
+            className='input input-bordered w-full max-w-xs'
           />
           <input
             type='number'
             name='phone'
             placeholder='Give your contact number'
-            class='input input-bordered w-full max-w-xs'
+            className='input input-bordered w-full max-w-xs'
           />
           <input
             type='submit'
             value='Place Order'
-            class='input btn-primary input-bordered w-full max-w-xs'
+            className='input btn-primary input-bordered w-full max-w-xs'
           />
         </form>
       </div>

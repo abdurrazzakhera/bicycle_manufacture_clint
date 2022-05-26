@@ -19,8 +19,8 @@ const ManageProducts = () => {
       <h1 className='text-5xl text-blue-700 text-center mb-5'>
         ManageMent Your Product
       </h1>
-      <div class='overflow-x-auto '>
-        <table class='table w-full  lg:w-11/12 mx-auto'>
+      <div className='overflow-x-auto '>
+        <table className='table w-full  lg:w-11/12 mx-auto'>
           <thead>
             <tr>
               <th>NO.</th>

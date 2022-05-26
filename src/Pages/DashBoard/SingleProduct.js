@@ -25,7 +25,7 @@ const SingleProduct = ({ product, index, refetch }) => {
     <tr>
       <th>{index + 1}</th>
       <td>
-        <div class='w-24 rounded-xl'>
+        <div className='w-24 rounded-xl'>
           <img src={img} alt='' />
         </div>
       </td>

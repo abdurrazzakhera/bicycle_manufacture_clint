@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Myorder = ({ order, index }) => {
-  const { customerName, productName, quantity, totalPrice, paid } = order;
+  const {
+    customerName,
+    productName,
+    quantity,
+    totalPrice,
+    paid,
+    transactionId,
+  } = order;
   console.log(order._id);
   return (
     <tr>
@@ -17,7 +24,15 @@ const Myorder = ({ order, index }) => {
             <button className='btn btn-primary btn-xs'>Payment</button>
           </Link>
         )}
-        {totalPrice && paid && <span className='text-primary'>Paid </span>}
+        {totalPrice && paid && (
+          <div>
+            <span className='text-primary'>Paid </span>
+            <p>
+              T-Id:{" "}
+              <span className='text-green-700 text-lg'>{transactionId}</span>
+            </p>
+          </div>
+        )}
       </td>
     </tr>
   );

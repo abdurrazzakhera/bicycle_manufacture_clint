@@ -115,12 +115,12 @@ const Login = () => {
             />
           </form>
 
-          <p class='mt-8 text-lg font-light text-center text-gray-700'>
+          <p className='mt-8 text-lg font-light text-center text-gray-700'>
             {" "}
             Don't have an account?{" "}
             <Link
               to='/singup'
-              class='font-medium text-purple-600 hover:underline'
+              className='font-medium text-purple-600 hover:underline'
             >
               Sign up
             </Link>

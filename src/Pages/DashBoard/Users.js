@@ -24,8 +24,8 @@ const Users = () => {
       <h1 className='text-5xl text-green-500'>
         Hello This page from all user:{users.length}
       </h1>
-      <div class='overflow-x-auto'>
-        <table class='table w-full'>
+      <div className='overflow-x-auto'>
+        <table className='table w-full'>
           <thead>
             <tr>
               <th>No.</th>

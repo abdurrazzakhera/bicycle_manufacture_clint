@@ -15,7 +15,7 @@ const DashBoard = () => {
         <Outlet />
       </div>
       <div className='drawer-side'>
-        <label for='dashboard-sidebar' className='drawer-overlay'></label>
+        <label htmlFor='dashboard-sidebar' className='drawer-overlay'></label>
         <ul className='menu p-4 overflow-y-auto w-48 bg-base-200 text-base-content'>
           {admin ? (
             <>

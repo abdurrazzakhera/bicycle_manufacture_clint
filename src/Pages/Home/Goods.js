@@ -12,7 +12,7 @@ const Goods = ({ product, index }) => {
     <tr>
       <th>{index + 1}</th>
       <td>
-        <div class='w-24 rounded-xl'>
+        <div className='w-24 rounded-xl'>
           <img src={img} alt='' />
         </div>
       </td>
@@ -24,7 +24,7 @@ const Goods = ({ product, index }) => {
       <td>
         <button
           onClick={() => handelPurchase(_id)}
-          class='btn btn-sm btn-primary'
+          className='btn btn-sm btn-primary'
         >
           Purchase
         </button>
