@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import AllOrder from "./AllOrder";
 
 const AllOrders = () => {
-  // const [allOrders, setAllOrders] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/orderadmin", {
-  //     method: "GET",
-  //     headers: {
-  //       authorization: `Bearar ${localStorage.getItem("accessToken")}`,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setAllOrders(data);
-  //       setIsLoading(false);
-  //     });
-  // }, []);
   const {
     data: allOrders,
     isLoading,
@@ -49,8 +33,8 @@ const AllOrders = () => {
               <th>Email</th>
               <th>Product</th>
               <th>Quantity</th>
-              <th>id</th>
-              <th>Payment Status</th>
+              <th>Transection Id</th>
+              <th> Status</th>
               <th>Action</th>
             </tr>
           </thead>
