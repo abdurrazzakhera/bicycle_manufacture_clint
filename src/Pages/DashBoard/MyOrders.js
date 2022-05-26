@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 import Myorder from "./Myorder";
 
 const MYOrders = () => {
@@ -15,15 +16,17 @@ const MYOrders = () => {
         },
       })
         .then((res) => {
-          console.log("res order", res);
+          // console.log("res order", res);
           return res.json();
         })
         .then((data) => {
-          console.log(data);
           setMyOrders(data);
         });
     }
   }, [user]);
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>
@@ -36,6 +39,7 @@ const MYOrders = () => {
               <th>Name</th>
               <th>Product</th>
               <th>Quantity</th>
+              <th>total price</th>
               <th>Payment</th>
             </tr>
           </thead>

@@ -11,7 +11,7 @@ const Orders = () => {
 
   const { productId } = useParams();
   const [product] = useProductDetails(productId);
-  const [increase, setIncrease] = useState(0);
+  const [increase, setIncrease] = useState(100);
   const { displayName, email } = user;
   const navigate = useNavigate();
   let miniumInfo;
@@ -21,18 +21,14 @@ const Orders = () => {
   const handelIncrease = () => {
     const previousQuantity = parseInt(increase);
     const currentQunatity = parseInt(previousQuantity) + 100;
-    console.log(currentQunatity);
     setIncrease(currentQunatity);
   };
   const handelDecrease = () => {
-    if (increase >= 100) {
+    if (increase > 100) {
       const previousQuantity = parseInt(increase);
       const currentQunatity = parseInt(previousQuantity) - 100;
-      console.log(currentQunatity);
       setIncrease(currentQunatity);
-      console.log("uf");
     } else {
-      // console.log("minium quantity ar need to order");
       return (miniumInfo = <p>Minium quantity need to order</p>);
     }
   };
@@ -43,6 +39,7 @@ const Orders = () => {
     const orderDetail = {
       productName: product.name,
       quantity: quantity,
+      totalPrice: product.price * quantity,
       customerName: displayName,
       customerEmail: email,
       customerPhone: phone,
@@ -61,7 +58,7 @@ const Orders = () => {
       .then((data) => {
         console.log(data);
         event.target.reset();
-        navigate("/");
+        // navigate("/");
         toast.success("oreder success");
       });
   };
