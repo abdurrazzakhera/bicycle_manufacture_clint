@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const Myorder = ({ order, index }) => {
+const Myorder = ({ order, index, refetch }) => {
   const {
+    _id,
     customerName,
     productName,
     quantity,
@@ -10,7 +12,23 @@ const Myorder = ({ order, index }) => {
     paid,
     transactionId,
   } = order;
-  console.log(order._id);
+  const handelOrderDelete = (id) => {
+    console.log(id);
+    const url = `http://localhost:5000/orders/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success("Product delete success");
+          refetch();
+        }
+      });
+  };
   return (
     <tr>
       <th>{index + 1}</th>
@@ -32,6 +50,20 @@ const Myorder = ({ order, index }) => {
               <span className='text-green-700 text-lg'>{transactionId}</span>
             </p>
           </div>
+        )}
+      </td>
+      <td>
+        {!paid ? (
+          <button
+            onClick={() => handelOrderDelete(_id)}
+            className='btn btn-primary btn-xs'
+          >
+            Cancel
+          </button>
+        ) : (
+          <button className='btn btn-primary btn-xs' disabled>
+            Cancel
+          </button>
         )}
       </td>
     </tr>

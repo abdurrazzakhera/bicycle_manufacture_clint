@@ -1,24 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import AllOrder from "./AllOrder";
 
 const AllOrders = () => {
-  const [allOrders, setAllOrders] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [allOrders, setAllOrders] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/orderadmin", {
+  //     method: "GET",
+  //     headers: {
+  //       authorization: `Bearar ${localStorage.getItem("accessToken")}`,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setAllOrders(data);
+  //       setIsLoading(false);
+  //     });
+  // }, []);
+  const {
+    data: allOrders,
+    isLoading,
+    refetch,
+  } = useQuery("allOrders", () =>
     fetch("http://localhost:5000/orderadmin", {
       method: "GET",
       headers: {
         authorization: `Bearar ${localStorage.getItem("accessToken")}`,
       },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setAllOrders(data);
-        setIsLoading(false);
-      });
-  }, []);
+    }).then((res) => res.json())
+  );
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -37,7 +50,8 @@ const AllOrders = () => {
               <th>Product</th>
               <th>Quantity</th>
               <th>id</th>
-              <th>Status</th>
+              <th>Payment Status</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -46,6 +60,7 @@ const AllOrders = () => {
                 index={index}
                 key={allorder._id}
                 allorder={allorder}
+                refetch={refetch}
               ></AllOrder>
             ))}
           </tbody>

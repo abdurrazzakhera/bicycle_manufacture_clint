@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { success } from "daisyui/src/colors";
+// import { success } from "daisyui/src/colors";
 
 const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
