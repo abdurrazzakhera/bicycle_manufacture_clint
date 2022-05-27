@@ -12,6 +12,10 @@ const AllOrder = ({ index, allorder, refetch }) => {
     paid,
     shiped,
   } = allorder;
+  const shipedOrder = {
+    productName,
+    quantity,
+  };
   const handleDeliverd = (id) => {
     console.log(id);
     //update backend in database
@@ -21,7 +25,7 @@ const AllOrder = ({ index, allorder, refetch }) => {
         "content-type": "application/json",
         authorization: `Bearar ${localStorage.getItem("accessToken")}`,
       },
-      // body: JSON.stringify(payment),
+      body: JSON.stringify(shipedOrder),
     })
       .then((res) => res.json())
       .then((data) => {

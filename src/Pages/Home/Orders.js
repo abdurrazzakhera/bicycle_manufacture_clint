@@ -12,6 +12,7 @@ const Orders = () => {
   const { productId } = useParams();
   const [product] = useProductDetails(productId);
   const [increase, setIncrease] = useState(100);
+  const [totalCost, setTotalCost] = useState("");
   const { displayName, email } = user;
   const navigate = useNavigate();
   let miniumInfo;
@@ -22,16 +23,19 @@ const Orders = () => {
     const previousQuantity = parseInt(increase);
     const currentQunatity = parseInt(previousQuantity) + 100;
     setIncrease(currentQunatity);
+    setTotalCost(currentQunatity * product.price);
   };
   const handelDecrease = () => {
     if (increase > 100) {
       const previousQuantity = parseInt(increase);
       const currentQunatity = parseInt(previousQuantity) - 100;
       setIncrease(currentQunatity);
+      setTotalCost(currentQunatity * product.price);
     } else {
       return (miniumInfo = <p>Minium quantity need to order</p>);
     }
   };
+  console.log(totalCost);
   const handleOrder = (event) => {
     event.preventDefault();
     const quantity = event.target.quantity.value;
@@ -66,46 +70,94 @@ const Orders = () => {
     <div className='mb-10 flex justify-center items-center'>
       <div className='grid grid-cols-1 w-96  border-2 p-5'>
         <h1 className='text-5xl text-red-500'>{product.name}</h1>
-        <div className='grid grid-cols-2 gap-8'>
-          <button onClick={handelIncrease} className='btn btn-primary'>
-            Plus
+        <div className='grid grid-cols-2 gap-8 my-5'>
+          <button onClick={handelIncrease} className='btn btn-primary btn-xs'>
+            +
           </button>
-          <button onClick={handelDecrease} className='btn btn-primary'>
-            Decrease
+          <button onClick={handelDecrease} className='btn btn-primary btn-xs'>
+            -
           </button>
         </div>
         <form
           onSubmit={handleOrder}
           className='grid grid-cols-1 gap-y-5 justify-items-center'
         >
-          <input
-            type='text'
-            name='quantity'
-            value={increase}
-            className='input input-bordered w-full max-w-xs'
-          />
-          <input
+          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+            <label for='Name'>Order Quantity</label>
+            <input
+              type='text'
+              name='quantity'
+              value={increase}
+              className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            />
+          </div>
+          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+            <label for='Name'>Product Name</label>
+            <input
+              type='text'
+              value={product.name}
+              className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            />
+          </div>
+          {/* <input
             type='text'
             value={product.name}
             className='input input-bordered w-full max-w-xs'
-          />
-
-          <input
+          /> */}
+          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+            <label for='Name'>Total Order Cost :</label>
+            <input
+              type='text'
+              value={totalCost}
+              className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            />
+          </div>
+          {/* <input
+            type='text'
+            value={totalCost}
+            className='input input-bordered w-full max-w-xs'
+          /> */}
+          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+            <label for='Name'>Your Name :</label>
+            <input
+              type='text'
+              value={displayName}
+              className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            />
+          </div>
+          {/* <input
             type='text'
             value={displayName}
             className='input input-bordered w-full max-w-xs'
-          />
-          <input
+          /> */}
+          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+            <label for='Name'>Your Email :</label>
+            <input
+              type='text'
+              value={email}
+              className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            />
+          </div>
+          {/* <input
             type='text'
             value={email}
             className='input input-bordered w-full max-w-xs'
-          />
-          <input
+          /> */}
+          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+            <label for='Name'>Give Youe contact Number :</label>
+            <input
+              type='text'
+              name='phone'
+              placeholder='Give your contact number'
+              className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            />
+          </div>
+          {/* <input
             type='number'
             name='phone'
             placeholder='Give your contact number'
             className='input input-bordered w-full max-w-xs'
-          />
+          /> */}
           <input
             type='submit'
             value='Place Order'
