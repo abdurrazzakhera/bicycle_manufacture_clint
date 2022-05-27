@@ -21,6 +21,7 @@ import AllOrders from "./Pages/DashBoard/AllOrders";
 import ManageProducts from "./Pages/DashBoard/ManageProducts";
 import AddProduct from "./Pages/DashBoard/AddProduct";
 import Payment from "./Pages/DashBoard/Payment";
+import AddReview from "./Pages/DashBoard/AddReview";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='myorders' element={<MyOrders />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
+          <Route path='addreview' element={<AddReview />}></Route>
           <Route
             path='allorders'
             element={

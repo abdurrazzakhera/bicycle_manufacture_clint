@@ -77,7 +77,6 @@ const Navbar = () => {
       <div className='navbar-end'>
         {user && (
           <label
-            tabIndex='1'
             htmlFor='dashboard-sidebar'
             className='btn btn-ghost lg:hidden'
           >

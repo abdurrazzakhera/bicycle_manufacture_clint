@@ -16,7 +16,7 @@ const Summary = () => {
   const review = <FontAwesomeIcon icon={faThumbsUp} />;
   return (
     <div className='lg:container  mx-auto my-20'>
-      <h1 className='lg:text-6xl  text-3xl text-primary uppercase font-bold text-center'>
+      <h1 className='lg:text-6xl  text-3xl text-primary uppercase font-bold text-center titleAfter'>
         our company statistics{" "}
       </h1>
 
