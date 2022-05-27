@@ -56,7 +56,7 @@ const Myorder = ({ order, index, refetch }) => {
         {!paid ? (
           <button
             onClick={() => handelOrderDelete(_id)}
-            className='btn btn-primary btn-xs'
+            className='btn bg-red-500 btn-xs text-white'
           >
             Cancel
           </button>

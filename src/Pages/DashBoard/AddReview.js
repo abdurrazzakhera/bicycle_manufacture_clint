@@ -49,14 +49,16 @@ const AddReview = () => {
       });
   };
   return (
-    <div className='grid grid-cols-1 w-4/12  border-2 p-5 mx-auto'>
-      <h1>This is a review page:{goods.length} </h1>
+    <div className='grid grid-cols-1 w-4/12  border-2 p-5 mx-auto rounded-sm shadow-lg'>
+      <h1 className='text-center text-2xl text-primary font-semibold mb-5'>
+        Please Review A Product{" "}
+      </h1>
       <form
         onSubmit={handelReview}
         className='grid grid-cols-1 gap-y-5 justify-items-center'
       >
         <div className=' w-full flex flex-col gap-y-2 mx-auto'>
-          <label htmlFor='Name'>Product Name</label>
+          <label htmlFor='Name'>Product Items:</label>
           <select
             name='product'
             className='select select-bordered select-md w-full max-w-xs'
@@ -69,17 +71,17 @@ const AddReview = () => {
           </select>
         </div>
         <div className=' w-full flex flex-col gap-y-2 mx-auto'>
-          <label htmlFor='Name'>Total Order Cost :</label>
+          <label htmlFor='Name'>Your Comments :</label>
           <textarea
             name='dec'
             id=''
             cols='30'
-            rows='10'
-            className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
+            rows='4'
+            className='rounded-lg px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
           ></textarea>
         </div>
         <div className=' w-full flex flex-col gap-y-2 mx-auto'>
-          <label htmlFor='Name'>Your Rating !!!</label>
+          <label htmlFor='Name'>Give your Rating !!!</label>
           <select
             name='ratting'
             className='select select-bordered select-sm w-full max-w-xs'
@@ -91,20 +93,14 @@ const AddReview = () => {
             <option>5</option>
           </select>
         </div>
-        {/* <div className=' w-full flex flex-col gap-y-2 mx-auto'>
-          <label for='Name'>Your Email :</label>
-          <input
-            type='text'
-            value={""}
-            className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
-          />
-        </div> */}
 
-        <input
-          type='submit'
-          value='Add Your Review'
-          className='input btn-outline hover:btn-primary input-bordered w-full max-w-xs text-lg font-bold'
-        />
+        <div>
+          <input
+            type='submit'
+            value='Add Your Review'
+            className='input btn-outline hover:btn-primary input-bordered w-full max-w-xs text-lg font-bold'
+          />
+        </div>
       </form>
     </div>
   );

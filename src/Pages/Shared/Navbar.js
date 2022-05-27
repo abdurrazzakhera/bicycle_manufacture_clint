@@ -22,15 +22,16 @@ const Navbar = () => {
         <Link to='/blogs'>Blogs</Link>
       </li>
       <li>
-        <Link to='/about'>About</Link>
+        <Link to='/myprotfolio'>My Portfolio</Link>
       </li>
       <li>
         <Link to='/product'>All Product</Link>
       </li>
-      <li>
-        <Link to='/contactus'>Contact Us</Link>
-      </li>
-      <li>{user && <Link to='/dashboard'>DashBoard</Link>}</li>
+      {user && (
+        <li>
+          <Link to='/dashboard'>DashBoard</Link>
+        </li>
+      )}
       <li>
         {user ? (
           <button onClick={logout}>Log Out</button>
@@ -67,8 +68,11 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to='/' className='btn btn-ghost normal-case text-xl'>
-          daisyUI
+        <Link
+          to='/'
+          className='btn btn-outline hover:btn-primary normal-case text-xl'
+        >
+          Bicycle GearWorld
         </Link>
       </div>
       <div className='navbar-end w-full hidden lg:flex'>

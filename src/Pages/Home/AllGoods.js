@@ -26,7 +26,7 @@ const AllGoods = () => {
               <th></th>
               <th>Avater</th>
               <th>Name</th>
-              <th>Description</th>
+              <th className='w-20'>Description</th>
               <th>price</th>
               <th>Minimum Lot</th>
               <th>Avilable</th>

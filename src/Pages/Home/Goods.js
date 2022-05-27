@@ -23,7 +23,7 @@ const Goods = ({ product, index }) => {
       </td>
       <td>{name}</td>
       <td>{dec}</td>
-      <td>{price}</td>
+      <td>$ {price}</td>
       <td>{quantity}</td>
       <td>{available}</td>
       <td>

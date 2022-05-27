@@ -22,6 +22,7 @@ import ManageProducts from "./Pages/DashBoard/ManageProducts";
 import AddProduct from "./Pages/DashBoard/AddProduct";
 import Payment from "./Pages/DashBoard/Payment";
 import AddReview from "./Pages/DashBoard/AddReview";
+import MyProtfolio from "./Pages/Home/MyProtfolio";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='/myprotfolio' element={<MyProtfolio />} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SignUp />} />

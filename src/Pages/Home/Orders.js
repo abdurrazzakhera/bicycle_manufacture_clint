@@ -62,7 +62,7 @@ const Orders = () => {
       .then((data) => {
         console.log(data);
         event.target.reset();
-        // navigate("/");
+        navigate("/dashboard/myorders");
         toast.success("oreder success");
       });
   };

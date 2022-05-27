@@ -6,8 +6,16 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   return (
     <div>
-      <h1 className='text-5xl text-primary'>{user.displayName}</h1>
-      <h1 className='text-5xl text-primary'> Email :{user.email}</h1>
+      <div>
+        <div>
+          <p>Full Name:</p>
+          <p>Md. Abdur Razzak</p>
+        </div>
+        <div>
+          <p>User Email:</p>
+          <p>hhera1413@com</p>
+        </div>
+      </div>
     </div>
   );
 };

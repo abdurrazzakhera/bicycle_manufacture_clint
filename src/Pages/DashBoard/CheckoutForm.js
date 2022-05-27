@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import Loading from "../Shared/Loading";
 // import { success } from "daisyui/src/colors";
 
 const CheckoutForm = ({ order }) => {
@@ -31,6 +32,9 @@ const CheckoutForm = ({ order }) => {
       });
   }, [totalPrice, setClientSecret]);
   // credit card function
+  // if (loading) {
+  //   return <Loading />;
+  // }
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) {
@@ -53,6 +57,7 @@ const CheckoutForm = ({ order }) => {
     setCardError(error?.message || "");
     setPaymentSuccess("");
     setLoading(true);
+
     //Confire card payment
     const { paymentIntent, intentError } = await stripe.confirmCardPayment(
       clientSecret,

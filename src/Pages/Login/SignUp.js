@@ -40,9 +40,9 @@ const SignUp = () => {
   };
   return (
     <div className='flex mb-10 justify-center items-center'>
-      <div className='card w-full bg-base-100  p-6 m-auto border-t border-purple-600 rounded shadow-lg shadow-purple-800/50 lg:max-w-md'>
+      <div className='card w-full bg-base-100  px-6 mx-auto border-t border-green-600 rounded shadow-lg shadow-green-800/50 lg:max-w-md'>
         <div className='card-body '>
-          <h2 className=''>Sign Up</h2>
+          <h2 className='text-center text-2xl text-primary'>Sign Up</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='form-control w-full max-w-xs'>
               <label className='label'>
@@ -142,7 +142,7 @@ const SignUp = () => {
             Allready have Accoutn?{" "}
             <Link
               to='/login'
-              className='font-medium text-purple-600 hover:underline'
+              className='font-medium text-primary hover:text-xl hover:underline'
             >
               Log In
             </Link>
@@ -150,7 +150,7 @@ const SignUp = () => {
           <div className='divider'>OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className='btn btn-outline '
+            className='btn btn-outline hover:btn-primary '
           >
             Continue With Google
           </button>
