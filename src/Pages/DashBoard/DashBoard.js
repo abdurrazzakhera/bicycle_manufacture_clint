@@ -20,7 +20,7 @@ const DashBoard = () => {
           {admin ? (
             <>
               <li>
-                <Link to='/dashboard'>My Profile</Link>
+                <Link to='/dashboard'>Profile</Link>
               </li>
               <li>
                 {" "}
@@ -39,7 +39,7 @@ const DashBoard = () => {
           ) : (
             <>
               <li>
-                <Link to='/dashboard'>My Profile</Link>
+                <Link to='/dashboard'>Profile</Link>
               </li>
               <li>
                 <Link to='/dashboard/myorders'>My Orders</Link>

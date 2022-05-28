@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useProductDetails = (productId) => {
   const [product, setProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/goods/${productId}`)
+    fetch(`https://intense-citadel-48808.herokuapp.com/goods/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

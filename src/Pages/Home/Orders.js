@@ -13,6 +13,7 @@ const Orders = () => {
   const [product] = useProductDetails(productId);
   const [increase, setIncrease] = useState(100);
   const [totalCost, setTotalCost] = useState("");
+  const [warrning, setWarning] = useState();
   const { displayName, email } = user;
   const navigate = useNavigate();
   let miniumInfo;
@@ -22,20 +23,26 @@ const Orders = () => {
   const handelIncrease = () => {
     const previousQuantity = parseInt(increase);
     const currentQunatity = parseInt(previousQuantity) + 100;
-    setIncrease(currentQunatity);
+    if (increase < product.available) {
+      setIncrease(currentQunatity);
+      setWarning(" ");
+    } else {
+      setWarning("Order Quantity Over Available Quantity ");
+    }
     setTotalCost(currentQunatity * product.price);
   };
   const handelDecrease = () => {
+    const previousQuantity = parseInt(increase);
+    const currentQunatity = parseInt(previousQuantity) - 100;
     if (increase > 100) {
-      const previousQuantity = parseInt(increase);
-      const currentQunatity = parseInt(previousQuantity) - 100;
       setIncrease(currentQunatity);
-      setTotalCost(currentQunatity * product.price);
+      setWarning(" ");
     } else {
-      return (miniumInfo = <p>Minium quantity need to order</p>);
+      setWarning("Minimum lots For Oeder");
     }
+    setTotalCost(currentQunatity * product.price);
   };
-  console.log(totalCost);
+  // console.log(totalCost);
   const handleOrder = (event) => {
     event.preventDefault();
     const quantity = event.target.quantity.value;
@@ -48,10 +55,10 @@ const Orders = () => {
       customerEmail: email,
       customerPhone: phone,
     };
-    console.log(orderDetail);
+    // console.log(orderDetail);
 
     // fetch the backend
-    fetch("http://localhost:5000/orders", {
+    fetch("https://intense-citadel-48808.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -69,7 +76,9 @@ const Orders = () => {
   return (
     <div className='mb-10 flex justify-center items-center'>
       <div className='grid grid-cols-1 w-96  border-2 p-5'>
-        <h1 className='text-5xl text-red-500'>{product.name}</h1>
+        <h1 className='text-5xl text-primary font-semibold text-center'>
+          {product.name}
+        </h1>
         <div className='grid grid-cols-2 gap-8 my-5'>
           <button onClick={handelIncrease} className='btn btn-primary btn-xs'>
             +
@@ -91,6 +100,9 @@ const Orders = () => {
               className='input px-4 py-2 border border-gray-300 outline-none focus:border-gray-400 w-full max-w-xs'
             />
           </div>
+          <p className='text-red-500 font-serif font-semibold text-xs'>
+            {warrning}
+          </p>
           <div class=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Product Name</label>
             <input

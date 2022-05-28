@@ -19,7 +19,7 @@ const AllOrder = ({ index, allorder, refetch }) => {
   const handleDeliverd = (id) => {
     console.log(id);
     //update backend in database
-    fetch(`http://localhost:5000/ordersShiped/${id}`, {
+    fetch(`https://intense-citadel-48808.herokuapp.com/ordersShiped/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -36,7 +36,7 @@ const AllOrder = ({ index, allorder, refetch }) => {
   };
   const handelOrderDelete = (id) => {
     // console.log(id);
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://intense-citadel-48808.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {

@@ -14,7 +14,7 @@ const Myorder = ({ order, index, refetch }) => {
   } = order;
   const handelOrderDelete = (id) => {
     console.log(id);
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://intense-citadel-48808.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {

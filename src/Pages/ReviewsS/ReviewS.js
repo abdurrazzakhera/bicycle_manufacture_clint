@@ -1,6 +1,6 @@
 import React from "react";
 
-const Review = ({ review }) => {
+const ReviewS = ({ review }) => {
   const { name, reviewProduct, dec, ratting } = review;
   return (
     <div className='card w-full bg-base-200 shadow-xl'>
@@ -24,4 +24,4 @@ const Review = ({ review }) => {
   );
 };
 
-export default Review;
+export default ReviewS;

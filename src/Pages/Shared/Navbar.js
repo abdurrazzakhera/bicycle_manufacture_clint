@@ -22,10 +22,10 @@ const Navbar = () => {
         <Link to='/blogs'>Blogs</Link>
       </li>
       <li>
-        <Link to='/myprotfolio'>My Portfolio</Link>
+        <Link to='/reviewsS'>Reviews</Link>
       </li>
       <li>
-        <Link to='/product'>All Product</Link>
+        <Link to='/myprotfolio'>My Portfolio</Link>
       </li>
       {user && (
         <li>
@@ -34,7 +34,9 @@ const Navbar = () => {
       )}
       <li>
         {user ? (
-          <button onClick={logout}>Log Out</button>
+          <button className='btn active:btn-primary' onClick={logout}>
+            Log Out
+          </button>
         ) : (
           <Link to='/login'>Login</Link>
         )}

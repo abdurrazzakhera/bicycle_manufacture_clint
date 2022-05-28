@@ -9,7 +9,7 @@ const AllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("allOrders", () =>
-    fetch("http://localhost:5000/orderadmin", {
+    fetch("https://intense-citadel-48808.herokuapp.com/orderadmin", {
       method: "GET",
       headers: {
         authorization: `Bearar ${localStorage.getItem("accessToken")}`,
@@ -21,8 +21,8 @@ const AllOrders = () => {
   }
   return (
     <div>
-      <h1 className='text-3xl text-red-500'>
-        Total order for Admin :{allOrders.length}
+      <h1 className='text-5xl text-primary text-center mb-5 font-semibold'>
+        Your Total Ordars
       </h1>
       <div className='overflow-x-auto'>
         <table className='table w-full'>

@@ -38,7 +38,7 @@ const Login = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className='flex h-screen justify-center items-center'>
+    <div className='flex  justify-center items-center'>
       <div className='card w-full bg-base-100  p-6 m-auto border-t border-green-600 rounded shadow-lg shadow-green-800/50 lg:max-w-md'>
         <div className='card-body '>
           <h2 className=''>Login</h2>

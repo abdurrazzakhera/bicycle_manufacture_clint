@@ -10,7 +10,9 @@ import Loading from "../Shared/Loading";
 const AddReview = () => {
   const [user] = useAuthState(auth);
   const { data: goods, isLoading } = useQuery("goods", () =>
-    fetch("http://localhost:5000/goods").then((res) => res.json())
+    fetch("https://intense-citadel-48808.herokuapp.com/goods").then((res) =>
+      res.json()
+    )
   );
   const navigate = useNavigate();
   if (isLoading) {
@@ -30,7 +32,7 @@ const AddReview = () => {
       ratting: ratting,
     };
     console.log(reviewOjt);
-    fetch("http://localhost:5000/review", {
+    fetch("https://intense-citadel-48808.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -20,7 +20,7 @@ const AddProduct = () => {
       available,
     };
     console.log("submit", product);
-    fetch("http://localhost:5000/goods", {
+    fetch("https://intense-citadel-48808.herokuapp.com/goods", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,8 +39,10 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <h1 className='text-5xl text-red-500'>ADD Your Product</h1>
-      <div className='w-6/12 mx-auto bg-base-100 my-14'>
+      <h1 className='text-5xl text-primary text-center mb-5'>
+        ADD Your Product
+      </h1>
+      <div className='lg:w-6/12 mx-auto bg-base-100 my-14'>
         <form onSubmit={handelProducAdd} className='grid grid-cols-1 gap-5 '>
           <input
             type='text'

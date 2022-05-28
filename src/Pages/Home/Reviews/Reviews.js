@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Loading from "../../Shared/Loading";
@@ -15,11 +15,14 @@ const Reviews = () => {
   //     });
   // }, []);
   const { data: reviews, isLoading } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/review").then((res) => res.json())
+    fetch("https://intense-citadel-48808.herokuapp.com/review").then((res) =>
+      res.json()
+    )
   );
   if (isLoading) {
     return <Loading></Loading>;
   }
+  // console.log(reviews);
   return (
     <div className='lg:container mx-auto mb-10'>
       <h1 className='lg:text-6xl  text-3xl text-primary uppercase font-bold text-center titleAfter'>
@@ -33,7 +36,7 @@ const Reviews = () => {
       <div className='mt-5'>
         <p className='text-center'>
           <Link
-            to='/'
+            to='/reviewsS'
             className='btn btn-outline border-primary border-2  hover:btn-primary'
           >
             See All Reviews

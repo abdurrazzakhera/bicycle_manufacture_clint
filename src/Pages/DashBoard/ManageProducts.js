@@ -9,14 +9,16 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("products", () =>
-    fetch("http://localhost:5000/goods").then((res) => res.json())
+    fetch("https://intense-citadel-48808.herokuapp.com/goods").then((res) =>
+      res.json()
+    )
   );
   if (isLoading) {
     return <Loading></Loading>;
   }
   return (
-    <div>
-      <h1 className='text-5xl text-blue-700 text-center mb-5'>
+    <div className='my-5'>
+      <h1 className='text-5xl text-primary text-center mb-5'>
         ManageMent Your Product
       </h1>
       <div className='overflow-x-auto '>

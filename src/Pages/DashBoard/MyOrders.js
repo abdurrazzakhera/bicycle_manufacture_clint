@@ -12,12 +12,15 @@ const MYOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/orders?customerEmail=${user.email}`, {
-      method: "GET",
-      headers: {
-        authorization: `Bearar ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://intense-citadel-48808.herokuapp.com/orders?customerEmail=${user.email}`,
+      {
+        method: "GET",
+        headers: {
+          authorization: `Bearar ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => res.json())
   );
   if (loading || isLoading) {
     return <Loading></Loading>;

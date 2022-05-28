@@ -5,7 +5,7 @@ const SingleProduct = ({ product, index, refetch }) => {
   const { _id, img, name, price, available } = product;
   const handelPriduct = (id) => {
     console.log(id);
-    const url = `http://localhost:5000/goods/${id}`;
+    const url = `https://intense-citadel-48808.herokuapp.com/goods/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -30,7 +30,7 @@ const SingleProduct = ({ product, index, refetch }) => {
         </div>
       </td>
       <td>{name}</td>
-      <td>{price}</td>
+      <td>$ {price}</td>
       <td>{available}</td>
       <td>
         <button

@@ -4,7 +4,7 @@ import Goods from "./Goods";
 const AllGoods = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/goods", {
+    fetch("https://intense-citadel-48808.herokuapp.com/goods", {
       method: "GET",
     })
       .then((res) => res.json())
@@ -34,9 +34,15 @@ const AllGoods = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product, index) => (
-              <Goods key={product._id} product={product} index={index}></Goods>
-            ))}
+            {products
+              .map((product, index) => (
+                <Goods
+                  key={product._id}
+                  product={product}
+                  index={index}
+                ></Goods>
+              ))
+              .slice(0, 6)}
           </tbody>
         </table>
       </div>

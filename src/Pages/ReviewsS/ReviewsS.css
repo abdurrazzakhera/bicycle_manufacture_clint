@@ -1,0 +1,16 @@
+.titleAfter {
+  position: relative;
+  margin-bottom: 25px;
+}
+.titleAfter:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  border-radius: 20px;
+  bottom: -12px;
+  left: -10px;
+  margin: 0 auto;
+  right: 0;
+  width: 75%;
+  background: #125955;
+}

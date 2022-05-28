@@ -23,6 +23,7 @@ import AddProduct from "./Pages/DashBoard/AddProduct";
 import Payment from "./Pages/DashBoard/Payment";
 import AddReview from "./Pages/DashBoard/AddReview";
 import MyProtfolio from "./Pages/Home/MyProtfolio";
+import ReviewsS from "./Pages/ReviewsS/ReviewsS";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/myprotfolio' element={<MyProtfolio />} />
         <Route path='/about' element={<About />} />
+        <Route path='/reviewsS' element={<ReviewsS />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SignUp />} />
         <Route

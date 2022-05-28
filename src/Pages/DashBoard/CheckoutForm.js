@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
   const { _id, totalPrice, customerName, customerEmail, productName } = order;
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://intense-citadel-48808.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -91,7 +91,7 @@ const CheckoutForm = ({ order }) => {
       //
       //
       //update backend in database
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://intense-citadel-48808.herokuapp.com/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
