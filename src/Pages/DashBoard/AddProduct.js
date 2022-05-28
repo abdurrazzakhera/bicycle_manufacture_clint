@@ -19,7 +19,7 @@ const AddProduct = () => {
       quantity,
       available,
     };
-    console.log("submit", product);
+    // console.log("submit", product);
     fetch("https://intense-citadel-48808.herokuapp.com/goods", {
       method: "POST",
       headers: {
@@ -34,7 +34,7 @@ const AddProduct = () => {
           toast.success("Product Added");
           event.target.reset();
         }
-        console.log(data);
+        // console.log(data);
       });
   };
   return (

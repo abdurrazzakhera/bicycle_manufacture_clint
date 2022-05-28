@@ -67,7 +67,7 @@ const Orders = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         event.target.reset();
         navigate("/dashboard/myorders");
         toast.success("oreder success");

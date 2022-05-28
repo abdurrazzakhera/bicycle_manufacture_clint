@@ -20,7 +20,7 @@ const MyProfile = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  console.log(adminUser);
+  // console.log(adminUser);
   return (
     <div>
       <div className='w-7/12 mx-auto grid lg:grid-cols-1 gap-5 text-center mt-5'>

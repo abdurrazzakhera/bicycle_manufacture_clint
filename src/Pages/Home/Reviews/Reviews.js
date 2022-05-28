@@ -31,7 +31,7 @@ const Reviews = () => {
       <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-3  '>
         {reviews
           .map((review, index) => <Review key={index} review={review}></Review>)
-          .slice(0, 6)}
+          .slice(0, 3)}
       </div>
       <div className='mt-5'>
         <p className='text-center'>

@@ -6,7 +6,6 @@ const useProductDetails = (productId) => {
     fetch(`https://intense-citadel-48808.herokuapp.com/goods/${productId}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setProduct(data);
       });
   }, [productId]);

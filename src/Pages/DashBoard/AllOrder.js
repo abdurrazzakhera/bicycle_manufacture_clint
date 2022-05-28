@@ -17,7 +17,7 @@ const AllOrder = ({ index, allorder, refetch }) => {
     quantity,
   };
   const handleDeliverd = (id) => {
-    console.log(id);
+    // console.log(id);
     //update backend in database
     fetch(`https://intense-citadel-48808.herokuapp.com/ordersShiped/${id}`, {
       method: "PATCH",
@@ -29,7 +29,7 @@ const AllOrder = ({ index, allorder, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         toast.success("Shipping Starting");
         refetch();
       });

@@ -8,7 +8,7 @@ const Blogs = () => {
       </h1>
       <div className='my-8'>
         <h1 className='text-3xl mb-4 font-semibold'>
-          Q:How will you improve the performance of a React Application?
+          Q: 01.How will you improve the performance of a React Application?
         </h1>
         <div className='text-lg'>
           <p>
@@ -28,7 +28,7 @@ const Blogs = () => {
       </div>
       <div className='my-8'>
         <h1 className='text-3xl mb-4 font-semibold'>
-          Q:How does prototypical inheritance work?
+          Q: 02.How does prototypical inheritance work?
         </h1>
         <div className='text-lg w-8/12'>
           <p>
@@ -46,7 +46,7 @@ const Blogs = () => {
       </div>
       <div className='my-8'>
         <h1 className='text-3xl mb-4 font-semibold'>
-          Q:What is a unit test?why should write unit tests?
+          Q: 03.What is a unit test?why should write unit tests?
         </h1>
         <div className='text-lg w-8/12'>
           <p>
@@ -65,41 +65,21 @@ const Blogs = () => {
       </div>
       <div className='my-8'>
         <h1 className='text-3xl mb-4 font-semibold'>
-          Q:How will you improve the performance of a React Application?
+          Q: 4.What are the different ways to manage a state in a React
+          application?
         </h1>
         <div className='text-lg'>
           <p>
-            React is a Most Popular JavaScript library for building user
-            interfaces. five way improve react perfermance
+            React is a Developers friendly library of javaScript. In react
+            Developers use friendly this library . there are some different ways
+            to manage a state in a React application
           </p>
           <ul>
-            <li>
-              1. Use React.Fragment to avoid adding extra nodes to the dom.
-            </li>
-            <li>2. Remove all inline Function</li>
-            <li>3. Avoid modifying the state if there is no change </li>
-            <li>4. Use React.memo for Component Memoization</li>
-            <li>5. Virtyalizw a large list using react window</li>
-          </ul>
-        </div>
-      </div>
-      <div className='my-8'>
-        <h1 className='text-3xl mb-4 font-semibold'>
-          Q:How will you improve the performance of a React Application?
-        </h1>
-        <div className='text-lg'>
-          <p>
-            React is a Most Popular JavaScript library for building user
-            interfaces. five way improve react perfermance
-          </p>
-          <ul>
-            <li>
-              1. Use React.Fragment to avoid adding extra nodes to the dom.
-            </li>
-            <li>2. Remove all inline Function</li>
-            <li>3. Avoid modifying the state if there is no change </li>
-            <li>4. Use React.memo for Component Memoization</li>
-            <li>5. Virtyalizw a large list using react window</li>
+            <li>1. Communication State</li>
+            <li>2. Data State</li>
+            <li>3. Control State</li>
+            <li>4. Session State</li>
+            <li>5. Location State</li>
           </ul>
         </div>
       </div>

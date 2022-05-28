@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const SingleProduct = ({ product, index, refetch }) => {
   const { _id, img, name, price, available } = product;
   const handelPriduct = (id) => {
-    console.log(id);
+    // console.log(id);
     const url = `https://intense-citadel-48808.herokuapp.com/goods/${id}`;
     fetch(url, {
       method: "DELETE",

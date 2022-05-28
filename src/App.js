@@ -24,6 +24,8 @@ import Payment from "./Pages/DashBoard/Payment";
 import AddReview from "./Pages/DashBoard/AddReview";
 import MyProtfolio from "./Pages/Home/MyProtfolio";
 import ReviewsS from "./Pages/ReviewsS/ReviewsS";
+import SingleGoods from "./Pages/SingleGoods/SingleGoods";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -33,8 +35,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/myprotfolio' element={<MyProtfolio />} />
-        <Route path='/about' element={<About />} />
         <Route path='/reviewsS' element={<ReviewsS />} />
+        <Route path='/singlegoods' element={<SingleGoods />} />
         <Route path='/login' element={<Login />} />
         <Route path='/singup' element={<SignUp />} />
         <Route
@@ -90,6 +92,7 @@ function App() {
             }
           ></Route>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

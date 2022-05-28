@@ -25,7 +25,7 @@ const CheckoutForm = ({ order }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data?.clientSecret) {
           setClientSecret(data.clientSecret);
         }
@@ -78,7 +78,7 @@ const CheckoutForm = ({ order }) => {
       setLoading(false);
     } else {
       setCardError("");
-      console.log(paymentIntent);
+      // console.log(paymentIntent);
       setTransectionId(paymentIntent.id);
       setPaymentSuccess(" Congratse !!! Payment completed");
       //
@@ -102,7 +102,7 @@ const CheckoutForm = ({ order }) => {
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);
-          console.log(data);
+          // console.log(data);
         });
     }
 

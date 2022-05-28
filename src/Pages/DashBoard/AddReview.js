@@ -23,7 +23,7 @@ const AddReview = () => {
     const product = event.target.product.value;
     const dec = event.target.dec.value;
     const ratting = event.target.ratting.value;
-    console.log(product);
+    // console.log(product);
     const reviewOjt = {
       name: user.displayName,
       email: user.email,
@@ -31,7 +31,7 @@ const AddReview = () => {
       dec: dec,
       ratting: ratting,
     };
-    console.log(reviewOjt);
+    // console.log(reviewOjt);
     fetch("https://intense-citadel-48808.herokuapp.com/review", {
       method: "POST",
       headers: {
