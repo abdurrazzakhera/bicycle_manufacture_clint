@@ -22,13 +22,13 @@ const Navbar = () => {
         <Link to='/blogs'>Blogs</Link>
       </li>
       <li>
-        <Link to='/singlegoods'>All Product</Link>
+        <Link to='/singlegoods'>Product</Link>
       </li>
       <li>
         <Link to='/reviewsS'>Reviews</Link>
       </li>
       <li>
-        <Link to='/myprotfolio'>My Portfolio</Link>
+        <Link to='/myprotfolio'>Portfolio</Link>
       </li>
       {user && (
         <li>

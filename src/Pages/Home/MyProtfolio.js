@@ -59,8 +59,8 @@ const MyProtfolio = () => {
             <h2 className='text-xl mb-2 text-center font-semibold text-primary'>
               My Three Project
             </h2>
-            <div class='overflow-x-auto'>
-              <table class='table w-full'>
+            <div className='overflow-x-auto'>
+              <table className='table w-full'>
                 <thead>
                   <tr>
                     <th>No.</th>

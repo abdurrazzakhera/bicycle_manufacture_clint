@@ -91,7 +91,7 @@ const Orders = () => {
           onSubmit={handleOrder}
           className='grid grid-cols-1 gap-y-5 justify-items-center'
         >
-          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+          <div className=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Order Quantity</label>
             <input
               type='text'
@@ -103,7 +103,7 @@ const Orders = () => {
           <p className='text-red-500 font-serif font-semibold text-xs'>
             {warrning}
           </p>
-          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+          <div className=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Product Name</label>
             <input
               type='text'
@@ -116,7 +116,7 @@ const Orders = () => {
             value={product.name}
             className='input input-bordered w-full max-w-xs'
           /> */}
-          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+          <div className=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Total Order Cost :</label>
             <input
               type='text'
@@ -129,7 +129,7 @@ const Orders = () => {
             value={totalCost}
             className='input input-bordered w-full max-w-xs'
           /> */}
-          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+          <div className=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Your Name :</label>
             <input
               type='text'
@@ -142,7 +142,7 @@ const Orders = () => {
             value={displayName}
             className='input input-bordered w-full max-w-xs'
           /> */}
-          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+          <div className=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Your Email :</label>
             <input
               type='text'
@@ -155,7 +155,7 @@ const Orders = () => {
             value={email}
             className='input input-bordered w-full max-w-xs'
           /> */}
-          <div class=' w-full flex flex-col gap-y-2 mx-auto'>
+          <div className=' w-full flex flex-col gap-y-2 mx-auto'>
             <label for='Name'>Give Youe contact Number :</label>
             <input
               type='text'
