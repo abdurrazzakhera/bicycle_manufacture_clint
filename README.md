@@ -26,3 +26,4 @@ Live Site : [Bicycle GearWorld](https://manufacture-site-12.web.app/).
 - Mongodb database.
 - React Toast
 - Stripe Payment
+- Chnaghe and add new url

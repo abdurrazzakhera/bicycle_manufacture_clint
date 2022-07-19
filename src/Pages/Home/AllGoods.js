@@ -14,19 +14,19 @@ const AllGoods = () => {
       });
   }, []);
   return (
-    <div className='lg:container mx-auto'>
-      <h1 className='text-3xl text-red-500'>
+    <div className="lg:container mx-auto">
+      <h1 className="text-3xl text-red-500">
         {" "}
         {/* All Product ar here:{products.length} */}
       </h1>
-      <div className='overflow-x-auto'>
-        <table className='table w-full'>
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
               <th>Avater</th>
               <th>Name</th>
-              <th className='w-20'>Description</th>
+              <th className="w-20">Description</th>
               <th>price</th>
               <th>Minimum Lot</th>
               <th>Avilable</th>
